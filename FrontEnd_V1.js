@@ -36,6 +36,10 @@ export default function InputComponent() {
       setIsRecording(false);
     }
   };
+const handleSubmit = () => {
+    console.log("Submitted text:", text);
+    setText("");
+  };
 
   return (
     <Card className="p-4 max-w-lg mx-auto space-y-4">
@@ -46,6 +50,7 @@ export default function InputComponent() {
           onChange={(e) => setText(e.target.value)}
           className="w-full border rounded-md p-2"
         />
+        <Button onClick={handleSubmit} className="mt-2 w-full">Submit</Button>
         <div className="flex gap-4 mt-4">
           <label className="cursor-pointer">
             <ImageIcon className="h-6 w-6" />
